@@ -1,248 +1,38 @@
 {% extends 'base.html' %}
-{%block title %}product{% endblock %}
-{% load static %}
+{%block title %}Product {%endblock%}
 {% block content %}
+<h1 class="text-center">Product List</h1>
 <br>
-<div class="wrapper">
-
-
-            <div class="container">
-
-                <div class="row g-1">
-
-            <div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/chilly.jpg/" width="200">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.45.00</span>
-                         <span>Chilly Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>500gm</small>
-
-                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-            <div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/turmeric.jpg/" width="170">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.140.00</span>
-                         <span>Turmeric Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>1kg</small>
-
-                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div><div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/garlic.jpg/" width="180">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.300.00</span>
-                         <span>Garlic Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>1 kg</small>
-
-                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div><div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/ginger.jpg/" width="200">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.200.00</span>
-                         <span>Ginger Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>90g</small>
-
-                         </div>
-
-                    </div>
-                </div>
-
-
-                </div>
-
-
-            </div>
-<div class="row g-1">
-
-            <div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/tapioca.jpg/" width="200">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.200.00</span>
-                         <span>tapioca Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>500gm</small>
-
-                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-
-            </div>
-
-<div class="col-md-3">
-
-                <div class="card p-3">
-
-                    <div class="text-center">
-
-                        <img src="/static/image/arrowr.jpg/" width="130">
-
-                    </div>
-
-                    <div class="product-details">
-
-
-                         <span class="font-weight-bold d-block">Rs.100.00</span>
-                         <span>Arrowroot Powder</span>
-
-
-                         <div class="buttons d-flex flex-row">
-                            <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-success cart-button btn-block"><span class="dot">1</span>Add to cart </button>
-                        </div>
-
-                         <div class="weight">
-
-                            <small>500g</small>
-
-                         </div>
-
-                    </div>
-
-
-
-                </div>
-
-
-
-
-
-
-        </div>
-
-            </div>
-
-
-        </div>
-
-
+<div class="container text-center bg-dark">
+{% for p in product %}
+   <div class="card text-center mx-3 my-4" style="width: 16rem; display:inline-block">
+    <img src="{{p.image.url}}" alt="" width="80px" height="150px" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title">{{p.name}}</h5>
+      <p class="card-text">{{p.price}}</p>
+      <p class="card-text">{{p.quantity}}</p>
+    <div class="buttons d-flex flex-row">
+        <div class="cart"><i class="fa fa-shopping-cart"></i></div> <button class="btn btn-primary cart-button btn-block">Add to cart </button>
+    </div>
 </div>
+</div>
+
+
+{%endfor%}
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

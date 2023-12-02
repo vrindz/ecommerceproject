@@ -1,7 +1,5 @@
-from django.shortcuts import render,redirect
-from django.http import HttpResponse,HttpResponseRedirect
-
-
+from django.shortcuts import render
+from .models import Product
 # Create your views here.
 def index(request):
     # return HttpResponse("Home Page")
@@ -18,10 +16,11 @@ def about(request):
     return render(request, "about.html")
 def product(request):
 
-    #return HttpResponse("About Page")
+    dict_prod = {
+        'product': Product.objects.all()
+      }
+    return render(request, "product.html",dict_prod)
 
-
-    return render(request, "product.html")
 def recipes(request):
 
     #return HttpResponse("About Page")

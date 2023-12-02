@@ -1,24 +1,14 @@
 
 li:hover{
-background-color:#008000;
+
 border-radius:5px;
 border:1px solid white ;
  }
 .content_page{
 background-color:#FFFFE0;
 }
-#.modal-header, h4, .close {
- # background-color: #333;
- # color: #fff !important;
- # text-align: center;
-  #font-size: 30px;
-}
-
-.modal-header, .modal-body {
+.modal-header,.modal-body {
   padding: 40px 50px;
 }
-
-
-
 
 

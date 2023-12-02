@@ -26,11 +26,11 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-sm bg-success navbar-dark">
+   <nav class="navbar navbar-expand-sm  navbar-dark" style="background-color: #fd7e14;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src="/static/image/miracle.jpeg/" alt="" style="width:50px;" class="rounded-pill">
-        <p><i><b>The Magic of Flavor</b></i></p>
+        <h6><i><b>The Magic of Flavor</b></i></h6>
     </a>
   </div>
 
@@ -52,7 +52,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link text-white" href="{% url 'product' %}">Product List</a>
+              <a class="nav-link text-white" href="{% url 'product' %}">Product </a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="{% url 'recipes' %}">Recipes</a>
@@ -65,13 +65,13 @@
             </li>
           </ul>
               <div class="container">
-		  <a class="navbar-brand-secondary"> Curry Powders</a>
+		  <a class="navbar-brand-primary"> Curry Powders</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  </button>
 		  <form class="d-flex">
         <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+        <button class="btn btn-secondary" type="button">Search</button>
       </form>
 
 
@@ -80,13 +80,13 @@
         </div>
     </nav>
 
-<div class="content_page" style="height:1100px">
+<div class="content_page" style="height:1100px;background-color:#ff9248">
 {% block content %}
     {% endblock %}
 </div>
 
 <section class="fixed-bottom">
-      <footer class="pt-2 pb-2  bg-success text-white">
+      <footer class="pt-2 pb-2 text-white" style="background-color: #fd7e14;">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-10 col-md-8">
